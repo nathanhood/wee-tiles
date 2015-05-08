@@ -1,0 +1,40 @@
+// Wee Module (weepower.com)
+// Licensed under Apache 2 (http://www.apache.org/licenses/LICENSE-2.0)
+// DO NOT MODIFY
+
+/*------------------------------------*\
+	# Column Generator
+\*------------------------------------*/
+
+.generate-columns (@n: @maxColumns, @i: 2) when (@i =< @n) {
+  &.\--columns-@{i} {
+    .column-modify(spaced; 1; @i; @columnSpacing);
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+
+
+
+
+/*------------------------------------*\
+	# Grid Layout and Styling
+\*------------------------------------*/
+
+.wee-grid {
+	.row(@columnSpacing);
+	&__column {
+		.column(spaced; 1; 1; @columnSpacing);
+		.generate-columns();
+	}
+	img {
+		.size(100%; auto);
+	}
+}
+.wee-tile-is-hidden {
+	.absolute();
+	.hidden() !important;
+}
+.wee-grid-is-hidden {
+	.hidden() !important;
+}

@@ -1,0 +1,22 @@
+{
+	"name": "Wee Tiles",
+	"description": "For responsive tiling in a grid format",
+	"version": "1.0.0",
+	"author": "Nathan Hood",
+	"homepage": "https://www.weepower.com",
+	"autoload": false,
+	"style": {
+		"build": [
+			"css/variables.less",
+			"css/screen.less"
+		]
+	},
+	"script": {
+		"build": [
+			"js/script.js"
+		]
+	},
+	"dependencies": {
+		"wee": "^2.2.0"
+	}
+}
